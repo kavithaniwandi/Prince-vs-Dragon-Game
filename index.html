@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Little Prince vs Dragon</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<video autoplay loop muted playsinline id="videoBackground">
+    <source src="assets/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div id="startScreen">
+    <h1>Little Prince <br> vs <br> Dragon</h1>
+    <img id="princeOnStart" src="assets/pr.png" alt="Little Prince" />
+    <img id="startBtn" src="assets/startbtn.png" alt="Start Game"/>
+  </div>
+
+  <div id="gameStatus">
+    <div id="scoreDisplay">Score: <span id="currentScore">0</span></div>
+    <div id="livesDisplay">Lives: <span id="currentLives">5</span></div>
+  </div>
+
+  <div id="gameAreaBehindBg" style="display: none;"></div>
+
+  <canvas id="gameCanvas" width="800" height="500"></canvas>
+  <img id="retryBtn" src="assets/retry.png" alt="Play Again" style="display: none;" />
+  <img id="crossBtn" src="assets/crossbtn.png" alt="Exit to Start" style="display: none;" />
+
+  <script src="game.js"></script>
+</body>
+</html>

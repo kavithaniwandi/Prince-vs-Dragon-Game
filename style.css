@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+  position: relative;
+  background-color: transparent;
+}
+
+#videoBackground {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  object-fit: cover; 
+  z-index: -1; 
+}
+
+h1{
+  font-family: 'Chewy', cursive;
+  bottom: 60px;
+  height: 50px;
+}
+
+#startScreen {
+  position: absolute;
+  text-align: center;
+  padding: 30px;
+  border-radius: 20px;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url('assets/startpage.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#startScreen h1 {
+  margin-top: 0;
+  font-size: 4em;
+}
+
+#startBtn {
+  font-size: 20px;
+  padding: 20px 30px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 70px;
+}
+
+#princeOnStart {
+  position: absolute;
+  right: 70px;
+  bottom: 150px;
+  width: 450px;
+  height: auto;
+  z-index: 3;
+}
+
+canvas {
+  border: 5px solid rgb(47, 154, 118);
+  display: none;
+  background-color: #fff;
+}
+
+#retryBtn {
+  width: 100px; 
+  height: auto; 
+  cursor: pointer; 
+  z-index: 3;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease; 
+}
+
+#retryBtn:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+#crossBtn {
+  position: absolute;
+  top: 20px;     
+  right: 20px;   
+  width: 40px;   
+  height: auto; 
+  cursor: pointer;
+  z-index: 10;  
+  transition: transform 0.1s ease;
+}
+
+#crossBtn:hover {
+  transform: scale(1.1); 
+}
+
+#gameStatus {
+  position: absolute;
+  top: 10px; 
+  left: 50%;
+  transform: translateX(-50%); 
+  z-index: 4; 
+  background: linear-gradient(to right, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); 
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: 2px solid #ff6f69;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex; 
+  gap: 30px; 
+  font-weight: bold;
+  font-size: 24px;
+  color: #333;
+}
+
+#gameStatus span {
+  display: inline-block; 
+}
+
+@keyframes score-up-number {
+  0% { transform: translateY(0px); color: #333; }
+  50% { transform: translateY(-8px); color: green; } 
+}
+
+@keyframes lives-down-number {
+  0% { transform: translateY(0px); color: #333; }
+  50% { transform: translateY(8px); color: red; } 
+  100% { transform: translateY(0px); color: #333; }
+}
+
+.score-up-anim {
+  animation: score-up-number 0.3s ease-out;
+}
+
+.lives-down-anim {
+  animation: lives-down-number 0.3s ease-out;
+}
